@@ -1,4 +1,10 @@
-const btn = document.getElementById("btn");
+let printMode = false;
+const btn = document.getElementById("generate-btn");
+
+function togglePrintMode() {
+  printMode = !printMode;
+  btn.textContent = printMode ? "Skriv ut" : "Klicka och generera";
+}
 
 function generateUI() {
   let html = "";
@@ -20,8 +26,16 @@ function generateUI() {
     html += "<h2>" + element + "</h2>";
   });
 
-  document.getElementById("interface").innerHTML = html;
-  btn.style.visibility = "hidden";
+  document.getElementById("output").innerHTML = html;
+  togglePrintMode();
 }
 
-btn.addEventListener("click", generateUI);
+function printUI() {
+  if (printMode) {
+    window.print();
+  } else {
+    generateUI();
+  }
+}
+
+btn.addEventListener("click", printUI);

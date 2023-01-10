@@ -2,23 +2,22 @@ html {
   font-family: "Delius", sans-serif;
 }
 
-#interface {
+#output {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-#interface h2 {
-  margin: 0 200px;
-  font-size: 200px;
-  white-space: nowrap;
+#output h2 {
+  margin: 0 20vw;
+  font-size: 20vh;
   font-weight: lighter;
 }
 
-#btn {
+.btn {
   padding: 10px 20px;
-  margin-top: 40px;
+  margin: 40px;
   border-radius: 5px;
   background-color: #333;
   color: white;
@@ -26,10 +25,16 @@ html {
   cursor: pointer;
 }
 
-#btn:hover {
+.btn:hover {
   background-color: orangered;
 }
 
-#btn {
+.btn:hover {
   box-shadow: 2px 2px 5px gray;
+}
+
+@media print {
+  button {
+    display: none;
+  }
 }
